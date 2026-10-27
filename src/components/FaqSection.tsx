@@ -75,15 +75,15 @@ export const FaqSection: React.FC<FaqSectionProps> = ({ currentLang }) => {
           })}
         </div>
 
-        {/* Extra question helper banner */}
+        {/* Extra question helper banner - 100% Translated */}
         <div className="rounded-3xl bg-[#140c26] border border-purple-500/30 p-6 text-center flex flex-col sm:flex-row items-center justify-between gap-4 shadow-xl neon-border-purple">
           <div className="flex items-center gap-3 text-left">
             <div className="w-10 h-10 rounded-xl bg-purple-500/20 border border-purple-400/30 flex items-center justify-center text-purple-300 shrink-0">
               <HelpCircle className="w-5 h-5" />
             </div>
             <div>
-              <h4 className="text-sm font-bold text-white">Tem alguma outra dúvida específica?</h4>
-              <p className="text-xs text-purple-200/70">Nossa equipe de concierge responde em poucos minutos no WhatsApp.</p>
+              <h4 className="text-sm font-bold text-white">{t.faq.helpTitle}</h4>
+              <p className="text-xs text-purple-200/70">{t.faq.helpDesc}</p>
             </div>
           </div>
 
@@ -94,7 +94,7 @@ export const FaqSection: React.FC<FaqSectionProps> = ({ currentLang }) => {
             className="inline-flex items-center gap-2 px-6 py-3 rounded-xl text-xs font-extrabold neon-btn-green whitespace-nowrap cursor-pointer shrink-0"
           >
             <MessageCircle className="w-4 h-4 fill-current" />
-            <span>Tirar Dúvida no WhatsApp</span>
+            <span>{t.faq.helpBtn}</span>
           </a>
         </div>
       </div>

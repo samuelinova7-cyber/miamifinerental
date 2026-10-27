@@ -12,12 +12,78 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ currentLang }) =
   const t = TRANSLATIONS[currentLang];
 
   const regions = [
-    { name: 'Aeroporto Internacional de Miami (MIA)', type: 'Terminal Curbside Delivery' },
-    { name: 'Aeroporto Fort Lauderdale-Hollywood (FLL)', type: 'Terminal Curbside Delivery' },
-    { name: 'Miami Beach / South Beach / Mid-Beach', type: 'Entrega em Hotel & Residência' },
-    { name: 'Brickell & Downtown Miami Financial District', type: 'Entrega VIP' },
-    { name: 'Sunny Isles Beach & Bal Harbour Luxury Resorts', type: 'Entrega VIP' },
-    { name: 'Aventura, Key Biscayne & Coral Gables', type: 'Sob Consulta' }
+    {
+      name: {
+        pt: 'Aeroporto Internacional de Miami (MIA)',
+        en: 'Miami International Airport (MIA)',
+        es: 'Aeropuerto Internacional de Miami (MIA)'
+      },
+      type: {
+        pt: 'Entrega na Calçada do Terminal',
+        en: 'Terminal Curbside Delivery',
+        es: 'Entrega en la Acera de la Terminal'
+      }
+    },
+    {
+      name: {
+        pt: 'Aeroporto Fort Lauderdale-Hollywood (FLL)',
+        en: 'Fort Lauderdale-Hollywood Airport (FLL)',
+        es: 'Aeropuerto Fort Lauderdale-Hollywood (FLL)'
+      },
+      type: {
+        pt: 'Entrega na Calçada do Terminal',
+        en: 'Terminal Curbside Delivery',
+        es: 'Entrega en la Acera de la Terminal'
+      }
+    },
+    {
+      name: {
+        pt: 'Miami Beach / South Beach / Mid-Beach',
+        en: 'Miami Beach / South Beach / Mid-Beach',
+        es: 'Miami Beach / South Beach / Mid-Beach'
+      },
+      type: {
+        pt: 'Entrega em Hotel & Residência',
+        en: 'Hotel & Villa Delivery',
+        es: 'Entrega en Hotel y Residencia'
+      }
+    },
+    {
+      name: {
+        pt: 'Brickell & Downtown Miami Financial District',
+        en: 'Brickell & Downtown Miami Financial District',
+        es: 'Brickell y Downtown Miami'
+      },
+      type: {
+        pt: 'Entrega VIP',
+        en: 'VIP Delivery',
+        es: 'Entrega VIP'
+      }
+    },
+    {
+      name: {
+        pt: 'Sunny Isles Beach & Bal Harbour Luxury Resorts',
+        en: 'Sunny Isles Beach & Bal Harbour Luxury Resorts',
+        es: 'Sunny Isles Beach y Bal Harbour Resorts'
+      },
+      type: {
+        pt: 'Entrega VIP',
+        en: 'VIP Delivery',
+        es: 'Entrega VIP'
+      }
+    },
+    {
+      name: {
+        pt: 'Aventura, Key Biscayne & Coral Gables',
+        en: 'Aventura, Key Biscayne & Coral Gables',
+        es: 'Aventura, Key Biscayne y Coral Gables'
+      },
+      type: {
+        pt: 'Sob Consulta',
+        en: 'Upon Request',
+        es: 'Bajo Consulta'
+      }
+    }
   ];
 
   return (
@@ -47,14 +113,14 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ currentLang }) =
                   <Phone className="w-5 h-5" />
                 </div>
                 <div>
-                  <span className="text-xs text-purple-300/80 block font-semibold">WhatsApp / Telefone Direto</span>
+                  <span className="text-xs text-purple-300/80 block font-semibold">{t.contact.phoneLabel}</span>
                   <span className="text-lg font-bold text-white tabular-nums tracking-wide font-mono">
                     {DISPLAY_PHONE}
                   </span>
                 </div>
               </div>
               <p className="text-xs text-purple-200/80 mb-5 leading-relaxed">
-                Atendimento humanizado 24 horas por dia em Português. Envie sua mensagem e receba a confirmação da sua reserva.
+                {t.contact.phoneDesc}
               </p>
               <a
                 href="https://wa.me/13058485075?text=Ol%C3%A1!%20Gostaria%20de%20iniciar%20minha%20reserva%20na%20Miami%20Fine%20Rental."
@@ -74,14 +140,14 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ currentLang }) =
                   <Instagram className="w-5 h-5" />
                 </div>
                 <div>
-                  <span className="text-xs text-purple-300/80 block font-semibold">Instagram Oficial</span>
+                  <span className="text-xs text-purple-300/80 block font-semibold">{t.contact.instagramLabel}</span>
                   <span className="text-lg font-bold text-white tracking-wide">
                     {INSTAGRAM_HANDLE}
                   </span>
                 </div>
               </div>
               <p className="text-xs text-purple-200/80 mb-5 leading-relaxed">
-                Acompanhe entregas diárias, vídeos com som dos motores e bastidores de clientes em Miami.
+                {t.contact.instagramDesc}
               </p>
               <a
                 href={INSTAGRAM_URL}
@@ -97,7 +163,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ currentLang }) =
             {/* Hours & Availability */}
             <div className="p-4 rounded-2xl bg-[#130b24] border border-purple-500/20 flex items-center gap-3 text-xs text-purple-200/90">
               <Clock className="w-4 h-4 text-purple-300 shrink-0" />
-              <span>{t.contact.hours}</span>
+              <span>{t.contact.hoursLabel}</span>
             </div>
           </div>
 
@@ -105,13 +171,13 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ currentLang }) =
           <div className="lg:col-span-7 p-6 sm:p-8 rounded-3xl bg-[#130b24] border border-purple-500/30 neon-border-purple">
             <div className="flex items-center gap-2 text-xs font-bold text-purple-300 uppercase tracking-wider mb-2">
               <MapPin className="w-4 h-4 text-purple-400" />
-              <span>Cobertura de Atendimento VIP</span>
+              <span>{t.contact.coverageBadge}</span>
             </div>
             <h3 className="text-2xl font-bold text-white mb-3">
-              Onde Entregamos e Retiramos Veículos
+              {t.contact.coverageTitle}
             </h3>
             <p className="text-purple-200/80 text-sm leading-relaxed mb-6">
-              Nossa equipe faz a entrega pontual do carro onde você estiver na Grande Miami e Sul da Flórida. Se você pousar de madrugada ou de manhã cedo, o veículo estará preparado pontualmente para a sua chegada.
+              {t.contact.coverageDesc}
             </p>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-6">
@@ -120,15 +186,15 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ currentLang }) =
                   key={i}
                   className="p-4 rounded-2xl bg-[#1b1033] border border-purple-500/20 flex flex-col justify-between"
                 >
-                  <span className="text-xs font-bold text-white">{region.name}</span>
-                  <span className="text-[11px] text-purple-300/90 mt-1 font-medium">{region.type}</span>
+                  <span className="text-xs font-bold text-white">{region.name[currentLang]}</span>
+                  <span className="text-[11px] text-purple-300/90 mt-1 font-medium">{region.type[currentLang]}</span>
                 </div>
               ))}
             </div>
 
             <div className="p-4 rounded-2xl bg-purple-950/40 border border-purple-500/30 text-xs text-purple-200 flex items-center gap-2.5">
               <ShieldCheck className="w-4 h-4 text-emerald-400 shrink-0" />
-              <span>Possibilidade de devolução em local diferente da retirada (sob consulta de rota).</span>
+              <span>{t.contact.differentDropoff}</span>
             </div>
           </div>
         </div>

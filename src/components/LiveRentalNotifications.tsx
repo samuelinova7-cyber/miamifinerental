@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Language } from '../types';
+import { TRANSLATIONS } from '../data/translations';
 import { CheckCircle2, Star, Car, X, Clock } from 'lucide-react';
 
 interface LiveRentalNotificationsProps {
@@ -28,7 +29,7 @@ const NOTIFICATIONS: NotificationItem[] = [
   {
     id: 'n1',
     type: 'rental',
-    author: 'Lucas S. (São Paulo)',
+    author: 'Lucas S.',
     vehicleOrRating: 'Corvette C8 Stingray',
     location: 'Miami Beach',
     timeAgo: { pt: 'há 4 min', en: '4 min ago', es: 'hace 4 min' },
@@ -41,19 +42,19 @@ const NOTIFICATIONS: NotificationItem[] = [
   {
     id: 'n2',
     type: 'review',
-    author: 'Juliana R. (Curitiba)',
+    author: 'Juliana R.',
     vehicleOrRating: '5.0 ★ Google Review',
     timeAgo: { pt: 'há 9 min', en: '9 min ago', es: 'hace 9 min' },
     text: {
-      pt: 'Avaliou com 5 estrelas: "Atendimento em português sensacional e sem filas no aeroporto!"',
-      en: 'Rated 5 stars: "Sensational Portuguese concierge and zero airport queues!"',
+      pt: 'Avaliou com 5 estrelas: "Atendimento sensacional e sem filas no aeroporto!"',
+      en: 'Rated 5 stars: "Sensational concierge and zero airport queues!"',
       es: 'Calificó con 5 estrellas: "¡Servicio increíble y sin filas en el aeropuerto!"'
     }
   },
   {
     id: 'n3',
     type: 'rental',
-    author: 'Thiago & Família (RJ)',
+    author: 'Thiago & Família',
     vehicleOrRating: 'Cadillac Escalade ESV',
     location: 'MIA Airport Terminal',
     timeAgo: { pt: 'há 16 min', en: '16 min ago', es: 'hace 16 min' },
@@ -66,7 +67,7 @@ const NOTIFICATIONS: NotificationItem[] = [
   {
     id: 'n4',
     type: 'rental',
-    author: 'Eduardo M. (Belo Horizonte)',
+    author: 'Eduardo M.',
     vehicleOrRating: 'Lamborghini Huracán EVO',
     location: 'Brickell',
     timeAgo: { pt: 'há 24 min', en: '24 min ago', es: 'hace 24 min' },
@@ -79,7 +80,7 @@ const NOTIFICATIONS: NotificationItem[] = [
   {
     id: 'n5',
     type: 'review',
-    author: 'Carlos & Fernanda (Brasília)',
+    author: 'Carlos & Fernanda',
     vehicleOrRating: '5.0 ★ Google Review',
     timeAgo: { pt: 'há 35 min', en: '35 min ago', es: 'hace 35 min' },
     text: {
@@ -91,7 +92,7 @@ const NOTIFICATIONS: NotificationItem[] = [
   {
     id: 'n6',
     type: 'rental',
-    author: 'Rodrigo P. (Porto Alegre)',
+    author: 'Rodrigo P.',
     vehicleOrRating: 'Porsche 911 Cabriolet',
     location: 'Sunny Isles Beach',
     timeAgo: { pt: 'há 48 min', en: '48 min ago', es: 'hace 48 min' },
@@ -104,6 +105,7 @@ const NOTIFICATIONS: NotificationItem[] = [
 ];
 
 export const LiveRentalNotifications: React.FC<LiveRentalNotificationsProps> = ({ currentLang }) => {
+  const t = TRANSLATIONS[currentLang];
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isVisible, setIsVisible] = useState(true);
   const [isDismissed, setIsDismissed] = useState(false);
@@ -112,7 +114,6 @@ export const LiveRentalNotifications: React.FC<LiveRentalNotificationsProps> = (
     if (isDismissed) return;
 
     const interval = setInterval(() => {
-      // Fade out
       setIsVisible(false);
       setTimeout(() => {
         setCurrentIndex((prev) => (prev + 1) % NOTIFICATIONS.length);
@@ -177,16 +178,16 @@ export const LiveRentalNotifications: React.FC<LiveRentalNotificationsProps> = (
             {item.type === 'rental' ? (
               <span className="text-purple-300 flex items-center gap-1">
                 <CheckCircle2 className="w-3 h-3 text-purple-400" />
-                Reserva Verificada
+                {t.notifications.verifiedBadge}
               </span>
             ) : (
               <span className="text-amber-300 flex items-center gap-1">
                 <Star className="w-3 h-3 fill-amber-400 text-amber-400" />
-                Avaliação 5 Estrelas no Google
+                {t.notifications.googleBadge}
               </span>
             )}
             <span className="text-purple-500/50">·</span>
-            <span className="text-emerald-400 font-mono">Miami, FL</span>
+            <span className="text-emerald-400 font-mono">{t.notifications.location}</span>
           </div>
         </div>
       </div>

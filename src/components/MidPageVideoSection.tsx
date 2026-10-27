@@ -43,16 +43,16 @@ export const MidPageVideoSection: React.FC<MidPageVideoSectionProps> = ({ curren
               {/* Top Neon Badge */}
               <div className="absolute top-4 left-4 px-3.5 py-1.5 rounded-full bg-purple-950/80 backdrop-blur-md border border-purple-400/40 text-xs font-bold text-purple-200 flex items-center gap-2 shadow-lg">
                 <Sparkles className="w-3.5 h-3.5 text-purple-300" />
-                <span className="tracking-wide">Miami Lifestyle Real</span>
+                <span className="tracking-wide">{t.midVideo.badgeTop}</span>
               </div>
 
               {/* Bottom Quick Badge */}
               <div className="absolute bottom-4 left-4 right-4 p-3 rounded-2xl bg-black/75 backdrop-blur-md border border-purple-500/30 flex items-center justify-between text-xs">
                 <div className="flex items-center gap-2 text-purple-200 font-semibold">
                   <span className="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-pulse" />
-                  <span>Veículos Novos na Orla de Miami</span>
+                  <span>{t.midVideo.badgeBottomLeft}</span>
                 </div>
-                <span className="text-emerald-400 font-bold font-mono">Disponível Hoje</span>
+                <span className="text-emerald-400 font-bold font-mono">{t.midVideo.badgeBottomRight}</span>
               </div>
             </div>
 
@@ -66,26 +66,26 @@ export const MidPageVideoSection: React.FC<MidPageVideoSectionProps> = ({ curren
           <div className="lg:col-span-5 space-y-6">
             <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-purple-500/10 border border-purple-400/30 text-purple-300 text-xs font-bold uppercase tracking-wider">
               <Zap className="w-3.5 h-3.5 text-purple-400" />
-              <span>Reserva Imediata sem Espera</span>
+              <span>{t.midVideo.kicker}</span>
             </div>
 
             <h2 className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight leading-tight">
-              Sua Chave Pronta na Calçada de <span className="text-purple-300 neon-glow-purple">Miami</span>
+              {t.midVideo.titlePart1} <span className="text-purple-300 neon-glow-purple">{t.midVideo.titleCity}</span>
             </h2>
 
             <p className="text-purple-200/80 text-sm sm:text-base leading-relaxed">
-              Esqueça cadastros demorados e processos complicados. Fale diretamente com o nosso concierge no WhatsApp e tenha a cotação exata e a confirmação em menos de 5 minutos.
+              {t.midVideo.desc}
             </p>
 
             <div className="space-y-3 pt-2">
               <div className="flex items-center gap-3 p-3 rounded-xl bg-purple-950/30 border border-purple-500/20 text-xs sm:text-sm text-purple-100">
                 <Plane className="w-4 h-4 text-purple-300 shrink-0" />
-                <span>Desembarque no aeroporto MIA ou FLL e pegue o carro na calçada</span>
+                <span>{t.midVideo.point1}</span>
               </div>
 
               <div className="flex items-center gap-3 p-3 rounded-xl bg-purple-950/30 border border-purple-500/20 text-xs sm:text-sm text-purple-100">
                 <ShieldCheck className="w-4 h-4 text-emerald-400 shrink-0" />
-                <span>Atendimento 100% humanizado em Português via WhatsApp 24/7</span>
+                <span>{t.midVideo.point2}</span>
               </div>
             </div>
 
@@ -98,12 +98,12 @@ export const MidPageVideoSection: React.FC<MidPageVideoSectionProps> = ({ curren
                 className="w-full sm:w-auto inline-flex items-center justify-center gap-3 px-8 py-4 rounded-2xl text-base font-extrabold neon-btn-green cursor-pointer"
               >
                 <MessageCircle className="w-5 h-5 fill-current" />
-                <span>Chamar no WhatsApp Agora</span>
+                <span>{t.midVideo.cta}</span>
                 <ArrowRight className="w-4 h-4" />
               </a>
               <p className="text-[11px] text-purple-300/70 mt-2 flex items-center gap-1.5">
                 <span className="w-1.5 h-1.5 rounded-full bg-emerald-400" />
-                <span>Resposta imediata da nossa equipe de atendimento em Miami</span>
+                <span>{t.midVideo.replyNote}</span>
               </p>
             </div>
           </div>

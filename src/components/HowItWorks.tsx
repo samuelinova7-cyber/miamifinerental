@@ -60,7 +60,7 @@ export const HowItWorks: React.FC<HowItWorksProps> = ({ currentLang }) => {
               </div>
 
               <div className="pt-6 mt-6 border-t border-purple-500/20 flex items-center text-xs text-purple-300 font-bold gap-1.5">
-                <span>Passo {step.number} de 03</span>
+                <span>{t.howItWorks.stepCounter.replace('{num}', step.number)}</span>
                 <ArrowRight className="w-3.5 h-3.5" />
               </div>
             </div>
@@ -90,7 +90,7 @@ export const HowItWorks: React.FC<HowItWorksProps> = ({ currentLang }) => {
               className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl text-sm font-extrabold neon-btn-green whitespace-nowrap"
             >
               <MessageCircle className="w-4 h-4 fill-current" />
-              <span>Tirar Dúvidas no WhatsApp</span>
+              <span>{t.howItWorks.airportCallout.btn}</span>
             </a>
           </div>
         </div>

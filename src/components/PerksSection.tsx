@@ -41,25 +41,25 @@ export const PerksSection: React.FC<PerksSectionProps> = ({ currentLang }) => {
               <div className="absolute inset-0 bg-gradient-to-t from-[#130b24] via-[#130b24]/40 to-transparent" />
               <div className="absolute top-4 left-4 px-3.5 py-1.5 rounded-xl bg-purple-950/80 backdrop-blur-md border border-purple-400/30 text-xs font-bold text-sky-300 flex items-center gap-1.5 shadow-lg">
                 <Plane className="w-3.5 h-3.5" />
-                <span>MIA & FLL Terminais de Desembarque</span>
+                <span>{t.perks.card1.badge}</span>
               </div>
             </div>
 
             <div className="p-6 sm:p-8">
               <div className="flex items-center gap-2 text-xs text-purple-300 font-bold uppercase tracking-wider mb-2">
                 <Plane className="w-4 h-4 text-purple-400" />
-                <span>VIP Airport Delivery</span>
+                <span>{t.perks.card1.tag}</span>
               </div>
               <h3 className="text-2xl font-bold text-white mb-2">
-                Entrega e Retirada na Calçada do Aeroporto
+                {t.perks.card1.title}
               </h3>
               <p className="text-purple-200/80 text-sm sm:text-base leading-relaxed">
-                Chega de monotrilho, vans lotadas e filas de 2 horas em balcões de locadoras convencionais. Ao desembarcar no Aeroporto de Miami (MIA) ou Fort Lauderdale (FLL), nosso concierge já estará com o carro te aguardando na saída do portão de desembarque.
+                {t.perks.card1.desc}
               </p>
             </div>
           </div>
 
-          {/* Bento Card 2: Zero Burocracia & Atendimento em Português (Col Span 5) */}
+          {/* Bento Card 2: Zero Burocracia & Atendimento VIP (Col Span 5) */}
           <div className="lg:col-span-5 flex flex-col gap-6">
             {/* Zero Burocracia */}
             <div className="p-6 sm:p-7 rounded-3xl bg-[#130b24] border border-purple-500/30 flex-1 hover:border-purple-400/50 transition-colors neon-border-purple">
@@ -67,29 +67,29 @@ export const PerksSection: React.FC<PerksSectionProps> = ({ currentLang }) => {
                 <Zap className="w-5 h-5" />
               </div>
               <div className="text-xs text-purple-300 font-bold uppercase tracking-wider mb-1">
-                Apenas CNH + Passaporte
+                {t.perks.card2.tag}
               </div>
               <h3 className="text-xl font-bold text-white mb-2">
-                Zero Burocracia para Brasileiros
+                {t.perks.card2.title}
               </h3>
               <p className="text-purple-200/80 text-sm leading-relaxed">
-                Processo 100% digital e descomplicado. Alugue com sua CNH brasileira regular e passaporte. Sem exigência de PID (Permissão Internacional) e sem contrato em letras miúdas.
+                {t.perks.card2.desc}
               </p>
             </div>
 
-            {/* Atendimento VIP em Português */}
+            {/* Atendimento VIP */}
             <div className="p-6 sm:p-7 rounded-3xl bg-[#130b24] border border-purple-500/30 flex-1 hover:border-purple-400/50 transition-colors neon-border-purple">
               <div className="w-10 h-10 rounded-xl bg-emerald-500/20 border border-emerald-400/30 flex items-center justify-center text-emerald-300 mb-4">
                 <MessageSquare className="w-5 h-5" />
               </div>
               <div className="text-xs text-emerald-300 font-bold uppercase tracking-wider mb-1">
-                Suporte 24 Horas
+                {t.perks.card3.tag}
               </div>
               <h3 className="text-xl font-bold text-white mb-2">
-                Atendimento VIP em Português
+                {t.perks.card3.title}
               </h3>
               <p className="text-purple-200/80 text-sm leading-relaxed">
-                Concierge brasileiro para suporte contínuo antes, durante e após a sua viagem. Dúvidas sobre estradas, pedágios na Flórida (SunPass) ou roteiros em Miami? Estamos a um WhatsApp de distância.
+                {t.perks.card3.desc}
               </p>
             </div>
           </div>
@@ -101,9 +101,9 @@ export const PerksSection: React.FC<PerksSectionProps> = ({ currentLang }) => {
             <div className="w-10 h-10 rounded-xl bg-purple-500/20 border border-purple-400/30 flex items-center justify-center text-purple-300 mb-4">
               <Sparkles className="w-5 h-5" />
             </div>
-            <h4 className="text-lg font-bold text-white mb-2">Frota 100% Nova e Revisada</h4>
+            <h4 className="text-lg font-bold text-white mb-2">{t.perks.card4.title}</h4>
             <p className="text-purple-200/80 text-sm leading-relaxed">
-              Todos os nossos veículos são modelos 2024 rigorosamente inspecionados, limpos e higienizados a cada devolução, sempre com cheirinho de novo.
+              {t.perks.card4.desc}
             </p>
           </div>
 
@@ -111,9 +111,9 @@ export const PerksSection: React.FC<PerksSectionProps> = ({ currentLang }) => {
             <div className="w-10 h-10 rounded-xl bg-emerald-500/20 border border-emerald-400/30 flex items-center justify-center text-emerald-300 mb-4">
               <CreditCard className="w-5 h-5" />
             </div>
-            <h4 className="text-lg font-bold text-white mb-2">Pagamento Facilitado (PIX & Cartão)</h4>
+            <h4 className="text-lg font-bold text-white mb-2">{t.perks.card5.title}</h4>
             <p className="text-purple-200/80 text-sm leading-relaxed">
-              Pague em Dólar ou no Brasil via PIX e cartões nacionais e internacionais sem complicações de câmbio ou IOF excessivo.
+              {t.perks.card5.desc}
             </p>
           </div>
 
@@ -121,9 +121,9 @@ export const PerksSection: React.FC<PerksSectionProps> = ({ currentLang }) => {
             <div className="w-10 h-10 rounded-xl bg-sky-500/20 border border-sky-400/30 flex items-center justify-center text-sky-300 mb-4">
               <ShieldCheck className="w-5 h-5" />
             </div>
-            <h4 className="text-lg font-bold text-white mb-2">O Carro Exato (Sem "Ou Similar")</h4>
+            <h4 className="text-lg font-bold text-white mb-2">{t.perks.card6.title}</h4>
             <p className="text-purple-200/80 text-sm leading-relaxed">
-              Se você reservou o Corvette C8 Vermelho ou o Porsche 911 Conversível, é exatamente essa máquina que você vai dirigir ao sair do aeroporto.
+              {t.perks.card6.desc}
             </p>
           </div>
         </div>

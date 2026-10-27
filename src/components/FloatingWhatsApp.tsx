@@ -12,12 +12,6 @@ export const FloatingWhatsApp: React.FC<FloatingWhatsAppProps> = ({ currentLang 
   const [isOpen, setIsOpen] = useState(false);
   const [bubbleDismissed, setBubbleDismissed] = useState(false);
 
-  const bubbleText = {
-    pt: 'Me chame aqui para alugar um carro',
-    en: 'Chat here to rent a luxury car',
-    es: 'Escríbeme aquí para alquilar un auto'
-  };
-
   const handleOpenWhatsApp = (customText?: string) => {
     const textToSend = customText || (
       currentLang === 'pt'
@@ -33,12 +27,12 @@ export const FloatingWhatsApp: React.FC<FloatingWhatsAppProps> = ({ currentLang 
 
   return (
     <div className="fixed bottom-5 right-5 z-40 flex flex-col items-end">
-      {/* Speech Bubble "Me chame aqui para alugar um carro" */}
+      {/* Speech Bubble "Me chame aqui para alugar um carro" - 100% Translated */}
       {!isOpen && !bubbleDismissed && (
         <div className="mb-2 relative animate-bubble cursor-pointer" onClick={() => handleOpenWhatsApp()}>
           <div className="bg-[#180e2e]/95 backdrop-blur-md border-2 border-emerald-400 text-white text-xs sm:text-sm font-extrabold px-3.5 py-2 rounded-2xl shadow-[0_0_20px_rgba(74,222,128,0.5)] flex items-center gap-2">
             <span className="w-2 h-2 rounded-full bg-emerald-400 animate-ping shrink-0" />
-            <span className="text-emerald-300 neon-glow-purple">{bubbleText[currentLang]}</span>
+            <span className="text-emerald-300 neon-glow-purple">{t.floating.bubble}</span>
             <button
               onClick={(e) => {
                 e.stopPropagation();
@@ -98,7 +92,7 @@ export const FloatingWhatsApp: React.FC<FloatingWhatsAppProps> = ({ currentLang 
             {/* Quick Suggestions */}
             <div className="space-y-1.5">
               <span className="text-[11px] font-bold text-purple-300 uppercase tracking-wider block">
-                Escolha uma opção rápida:
+                {t.floating.quickSubtitle}
               </span>
               {t.floating.quickOptions.map((opt, idx) => (
                 <button
@@ -132,12 +126,11 @@ export const FloatingWhatsApp: React.FC<FloatingWhatsAppProps> = ({ currentLang 
           if (isOpen) {
             setIsOpen(false);
           } else {
-            // Direct open WhatsApp or toggle popover
             setIsOpen(true);
           }
         }}
         className="relative w-15 h-15 rounded-full neon-btn-green flex items-center justify-center cursor-pointer border-2 border-white/30 focus:outline-none"
-        aria-label="Abrir WhatsApp"
+        aria-label="WhatsApp"
       >
         {isOpen ? (
           <X className="w-6 h-6 text-black" />

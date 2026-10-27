@@ -118,33 +118,33 @@ export const VehicleModal: React.FC<VehicleModalProps> = ({
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
             <div className="p-3.5 rounded-2xl bg-[#1b1033] border border-purple-500/25 text-center">
               <Zap className="w-4 h-4 text-purple-300 mx-auto mb-1" />
-              <span className="text-xs text-purple-300/80 block">Potência</span>
+              <span className="text-xs text-purple-300/80 block">{t.fleet.horsepower}</span>
               <span className="text-sm font-bold text-white tabular-nums font-mono">{vehicle.specs.horsepower} CV</span>
             </div>
 
             <div className="p-3.5 rounded-2xl bg-[#1b1033] border border-purple-500/25 text-center">
               <Gauge className="w-4 h-4 text-sky-400 mx-auto mb-1" />
-              <span className="text-xs text-purple-300/80 block">0 a 60 mph</span>
+              <span className="text-xs text-purple-300/80 block">{t.fleet.zeroToSixty}</span>
               <span className="text-sm font-bold text-white tabular-nums font-mono">{vehicle.specs.acceleration}</span>
             </div>
 
             <div className="p-3.5 rounded-2xl bg-[#1b1033] border border-purple-500/25 text-center">
               <Users className="w-4 h-4 text-emerald-400 mx-auto mb-1" />
               <span className="text-xs text-purple-300/80 block">{t.fleet.passengers}</span>
-              <span className="text-sm font-bold text-white tabular-nums font-mono">{vehicle.specs.passengers} Lugares</span>
+              <span className="text-sm font-bold text-white tabular-nums font-mono">{vehicle.specs.passengers} {t.fleet.seats}</span>
             </div>
 
             <div className="p-3.5 rounded-2xl bg-[#1b1033] border border-purple-500/25 text-center">
               <Briefcase className="w-4 h-4 text-fuchsia-400 mx-auto mb-1" />
               <span className="text-xs text-purple-300/80 block">{t.fleet.luggage}</span>
-              <span className="text-sm font-bold text-white tabular-nums font-mono">{vehicle.specs.luggage} Malas</span>
+              <span className="text-sm font-bold text-white tabular-nums font-mono">{vehicle.specs.luggage} {t.fleet.luggage}</span>
             </div>
           </div>
 
           {/* Engine & Transmission */}
           <div className="p-4 rounded-2xl bg-[#1b1033] border border-purple-500/20 text-xs sm:text-sm text-purple-100 flex flex-col sm:flex-row justify-between gap-2">
             <div>
-              <span className="text-purple-300/80 font-medium">Motorização: </span>
+              <span className="text-purple-300/80 font-medium">{t.fleet.engine}: </span>
               <span className="text-white font-semibold">{vehicle.specs.engine}</span>
             </div>
             <div>
@@ -226,13 +226,13 @@ export const VehicleModal: React.FC<VehicleModalProps> = ({
                   {t.modal.estimatedTotal} <span className="text-purple-300 tabular-nums font-mono neon-glow-purple">${totalRate.toLocaleString()}</span>
                 </span>
                 <p className="text-[11px] text-purple-300/70 mt-0.5">
-                  {t.modal.depositLabel} ${vehicle.depositAmount} (pré-autorização estornada na devolução)
+                  {t.modal.depositLabel} ${vehicle.depositAmount} {t.modal.depositNote}
                 </p>
               </div>
 
               <div className="flex items-center gap-1.5 text-purple-200">
                 <MapPin className="w-3.5 h-3.5 text-purple-400 shrink-0" />
-                <span className="text-[11px]">Entrega VIP no seu terminal</span>
+                <span className="text-[11px]">{t.modal.airportTerminalNotice}</span>
               </div>
             </div>
           </div>

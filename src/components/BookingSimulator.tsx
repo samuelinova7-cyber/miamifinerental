@@ -1,9 +1,9 @@
-import React, { useState, useId } from 'react';
+import React, { useState, useId, useEffect } from 'react';
 import { Language, CarCategory } from '../types';
 import { TRANSLATIONS } from '../data/translations';
 import { PICKUP_LOCATIONS } from '../data/fleet';
 import { buildSimulatorWhatsAppMessage } from '../utils/whatsapp';
-import { Calendar, MapPin, Car, MessageCircle, Clock, ShieldCheck, ArrowRight, Sparkles } from 'lucide-react';
+import { Calendar, MapPin, Car, MessageCircle, Clock, ShieldCheck, ArrowRight } from 'lucide-react';
 
 interface BookingSimulatorProps {
   currentLang: Language;
@@ -34,8 +34,12 @@ export const BookingSimulator: React.FC<BookingSimulatorProps> = ({
 
   const [pickupDate, setPickupDate] = useState(getTomorrowDate());
   const [returnDate, setReturnDate] = useState(getDefaultReturnDate());
-  const [pickupLocation, setPickupLocation] = useState(PICKUP_LOCATIONS[0].label[currentLang]);
+  const [pickupLocationId, setPickupLocationId] = useState(PICKUP_LOCATIONS[0].id);
   const [selectedCategory, setSelectedCategory] = useState<'all' | CarCategory>('all');
+
+  // Find translated location
+  const currentLocationObj = PICKUP_LOCATIONS.find((l) => l.id === pickupLocationId) || PICKUP_LOCATIONS[0];
+  const pickupLocationLabel = currentLocationObj.label[currentLang];
 
   const calculateDays = () => {
     if (!pickupDate || !returnDate) return 3;
@@ -71,7 +75,7 @@ export const BookingSimulator: React.FC<BookingSimulatorProps> = ({
       lang: currentLang,
       pickupDate,
       returnDate,
-      pickupLocation,
+      pickupLocation: pickupLocationLabel,
       category: categoryName,
       estimatedTotal,
       days
@@ -149,12 +153,12 @@ export const BookingSimulator: React.FC<BookingSimulatorProps> = ({
             </label>
             <select
               id={locationId}
-              value={pickupLocation}
-              onChange={(e) => setPickupLocation(e.target.value)}
+              value={pickupLocationId}
+              onChange={(e) => setPickupLocationId(e.target.value)}
               className="w-full bg-[#1a0f33] text-white font-medium text-xs sm:text-sm focus:outline-none cursor-pointer truncate"
             >
               {PICKUP_LOCATIONS.map((loc) => (
-                <option key={loc.id} value={loc.label[currentLang]} className="bg-[#1a0f33] text-white py-1">
+                <option key={loc.id} value={loc.id} className="bg-[#1a0f33] text-white py-1">
                   {loc.label[currentLang]}
                 </option>
               ))}
@@ -198,7 +202,7 @@ export const BookingSimulator: React.FC<BookingSimulatorProps> = ({
             <span className="text-purple-600 hidden sm:inline">·</span>
             <div className="text-purple-300/80 text-xs hidden sm:flex items-center gap-1">
               <ShieldCheck className="w-3.5 h-3.5 text-emerald-400" />
-              <span>Sem taxas ocultas</span>
+              <span>{t.simulator.noHiddenFees}</span>
             </div>
           </div>
 

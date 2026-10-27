@@ -190,7 +190,7 @@ export const FleetSection: React.FC<FleetSectionProps> = ({
                     <div>
                       <div className="flex items-center justify-center gap-1 text-purple-300 text-[11px] mb-0.5 font-semibold">
                         <Users className="w-3 h-3 text-emerald-400" />
-                        <span>Lugares</span>
+                        <span>{t.fleet.seats}</span>
                       </div>
                       <span className="text-xs font-bold text-white tabular-nums font-mono">
                         {vehicle.specs.passengers}
@@ -248,7 +248,7 @@ export const FleetSection: React.FC<FleetSectionProps> = ({
                 className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl text-sm font-extrabold neon-btn-green"
               >
                 <MessageCircle className="w-4 h-4 fill-current" />
-                <span>Falar com Concierge VIP</span>
+                <span>{t.fleet.vipConciergeBtn}</span>
               </a>
             </div>
           </div>

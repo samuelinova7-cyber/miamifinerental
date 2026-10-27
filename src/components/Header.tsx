@@ -43,13 +43,13 @@ export const Header: React.FC<HeaderProps> = ({
       : 'Hello! I would like to check available luxury car rentals in Miami.'
   );
 
-  const tickerItems = [
-    { icon: <Zap className="w-3 h-3 text-purple-300" />, text: 'SEM BUROCRACIA: APENAS CNH + PASSAPORTE' },
-    { icon: <Plane className="w-3 h-3 text-sky-400" />, text: 'ENTREGA VIP NOS AEROPORTOS MIA E FLL SEM FILAS' },
-    { icon: <Sparkles className="w-3 h-3 text-purple-300" />, text: 'FROTA 100% 2024: LAMBORGHINI, CORVETTE, PORSCHE, ESCALADE' },
-    { icon: <ShieldCheck className="w-3 h-3 text-emerald-400" />, text: 'ATENDIMENTO VIP EM PORTUGUÊS 24H NO WHATSAPP' },
-    { icon: <CreditCard className="w-3 h-3 text-purple-300" />, text: 'PAGAMENTO VIA PIX OU CARTÃO EM ATÉ 12X' },
-    { icon: <Plane className="w-3 h-3 text-emerald-400" />, text: 'CHAVE NA MÃO EM MENOS DE 5 MINUTOS NO DESEMBARQUE' }
+  const tickerIcons = [
+    <Zap key="1" className="w-3 h-3 text-purple-300" />,
+    <Plane key="2" className="w-3 h-3 text-sky-400" />,
+    <Sparkles key="3" className="w-3 h-3 text-purple-300" />,
+    <ShieldCheck key="4" className="w-3 h-3 text-emerald-400" />,
+    <CreditCard key="5" className="w-3 h-3 text-purple-300" />,
+    <Plane key="6" className="w-3 h-3 text-emerald-400" />
   ];
 
   return (
@@ -60,12 +60,12 @@ export const Header: React.FC<HeaderProps> = ({
           : 'bg-gradient-to-b from-[#0b0616]/95 via-[#0b0616]/80 to-transparent'
       }`}
     >
-      {/* 1. Running Ticker Announcement Bar */}
+      {/* 1. Running Ticker Announcement Bar - 100% Translated */}
       <div className="bg-gradient-to-r from-purple-950 via-[#1e0e38] to-purple-950 border-b border-purple-500/30 overflow-hidden py-1.5 text-xs text-purple-200">
         <div className="animate-marquee whitespace-nowrap flex items-center gap-8">
-          {[...tickerItems, ...tickerItems, ...tickerItems].map((item, index) => (
+          {[...t.ticker, ...t.ticker, ...t.ticker].map((item, index) => (
             <div key={index} className="inline-flex items-center gap-2 px-2 text-[11px] font-semibold tracking-wide">
-              {item.icon}
+              {tickerIcons[index % tickerIcons.length]}
               <span className="text-purple-100">{item.text}</span>
               <span className="text-purple-400/50">✦</span>
             </div>
@@ -87,7 +87,6 @@ export const Header: React.FC<HeaderProps> = ({
                 alt="Miami Fine Rental Car - Logo"
                 className="h-10 sm:h-12 w-auto object-contain rounded-lg shadow-[0_0_15px_rgba(192,132,252,0.45)] group-hover:shadow-[0_0_25px_rgba(216,180,254,0.7)] transition-all duration-300"
               />
-              {/* Subtle Mirror Reflection Effect below logo */}
               <div className="absolute -bottom-2 left-0 right-0 h-2 overflow-hidden opacity-35 blur-[1px] pointer-events-none hidden sm:block">
                 <img
                   src="https://res.cloudinary.com/hd1sahto/image/upload/v1793142038/WhatsApp_Image_2026-10-27_at_7.21.26_PM_2.jpg"
@@ -101,8 +100,8 @@ export const Header: React.FC<HeaderProps> = ({
               <span className="text-xs uppercase font-extrabold tracking-widest text-purple-300 neon-glow-purple block leading-tight">
                 MIAMI FINE RENTAL
               </span>
-              <span className="text-[10px] uppercase tracking-wider text-purple-400/70 block">
-                LUXURY & EXOTIC CARS
+              <span className="text-[10px] uppercase tracking-wider text-purple-400/80 block font-medium">
+                {t.tagline}
               </span>
             </div>
           </a>
@@ -153,8 +152,8 @@ export const Header: React.FC<HeaderProps> = ({
             <div className="relative">
               <button
                 onClick={() => setLangMenuOpen(!langMenuOpen)}
-                className="flex items-center gap-1.5 px-2.5 py-1.5 text-xs font-semibold rounded-xl bg-purple-950/60 hover:bg-purple-900/60 text-purple-200 border border-purple-500/30 transition-colors focus:outline-none"
-                aria-label="Selecionar Idioma"
+                className="flex items-center gap-1.5 px-3 py-1.5 text-xs font-bold rounded-xl bg-purple-950/70 hover:bg-purple-900/70 text-purple-200 border border-purple-500/40 transition-colors focus:outline-none"
+                aria-label="Selecionar Idioma / Change Language"
               >
                 <Globe className="w-3.5 h-3.5 text-purple-300" />
                 <span className="uppercase">{currentLang}</span>
@@ -220,7 +219,7 @@ export const Header: React.FC<HeaderProps> = ({
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
               className="lg:hidden p-2 rounded-xl text-purple-200 hover:text-white bg-purple-950/60 border border-purple-500/30 focus:outline-none"
-              aria-label="Abrir Menu"
+              aria-label="Menu"
             >
               {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
             </button>

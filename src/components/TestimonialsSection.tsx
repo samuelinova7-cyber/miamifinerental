@@ -44,7 +44,7 @@ export const TestimonialsSection: React.FC<TestimonialsSectionProps> = ({ curren
           </p>
         </div>
 
-        {/* Claim-to-Proof Adjacency Stats */}
+        {/* Claim-to-Proof Adjacency Stats - 100% Translated */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-14">
           <div className="p-5 rounded-3xl bg-[#130b24] border border-purple-500/25 text-center neon-border-purple">
             <div className="flex items-center justify-center gap-1 text-amber-300 mb-1">
@@ -52,32 +52,32 @@ export const TestimonialsSection: React.FC<TestimonialsSectionProps> = ({ curren
                 <Star key={i} className="w-4 h-4 fill-amber-300" />
               ))}
             </div>
-            <div className="text-2xl font-black text-white tabular-nums font-mono">4.9 / 5.0</div>
-            <div className="text-xs text-purple-300/80 mt-1">Classificação Média Google</div>
+            <div className="text-2xl font-black text-white tabular-nums font-mono">{t.testimonials.stats.rating}</div>
+            <div className="text-xs text-purple-300/80 mt-1">{t.testimonials.stats.ratingLabel}</div>
           </div>
 
           <div className="p-5 rounded-3xl bg-[#130b24] border border-purple-500/25 text-center neon-border-purple">
             <div className="w-8 h-8 rounded-xl bg-purple-500/20 flex items-center justify-center text-purple-300 mx-auto mb-1">
               <Users className="w-4 h-4" />
             </div>
-            <div className="text-2xl font-black text-white tabular-nums font-mono">+2.500</div>
-            <div className="text-xs text-purple-300/80 mt-1">Brasileiros Atendidos na Flórida</div>
+            <div className="text-2xl font-black text-white tabular-nums font-mono">{t.testimonials.stats.clients}</div>
+            <div className="text-xs text-purple-300/80 mt-1">{t.testimonials.stats.clientsLabel}</div>
           </div>
 
           <div className="p-5 rounded-3xl bg-[#130b24] border border-purple-500/25 text-center neon-border-purple">
             <div className="w-8 h-8 rounded-xl bg-emerald-500/20 flex items-center justify-center text-emerald-300 mx-auto mb-1">
               <ShieldCheck className="w-4 h-4" />
             </div>
-            <div className="text-2xl font-black text-white tabular-nums font-mono">100%</div>
-            <div className="text-xs text-purple-300/80 mt-1">Entregas Pontuais no Portão</div>
+            <div className="text-2xl font-black text-white tabular-nums font-mono">{t.testimonials.stats.punctuality}</div>
+            <div className="text-xs text-purple-300/80 mt-1">{t.testimonials.stats.punctualityLabel}</div>
           </div>
 
           <div className="p-5 rounded-3xl bg-[#130b24] border border-purple-500/25 text-center neon-border-purple">
             <div className="w-8 h-8 rounded-xl bg-purple-500/20 flex items-center justify-center text-purple-300 mx-auto mb-1">
               <Award className="w-4 h-4" />
             </div>
-            <div className="text-2xl font-black text-white tabular-nums font-mono">0 Minutos</div>
-            <div className="text-xs text-purple-300/80 mt-1">Tempo de Fila em Balcão</div>
+            <div className="text-2xl font-black text-white tabular-nums font-mono">{t.testimonials.stats.counterTime}</div>
+            <div className="text-xs text-purple-300/80 mt-1">{t.testimonials.stats.counterTimeLabel}</div>
           </div>
         </div>
 
@@ -97,7 +97,7 @@ export const TestimonialsSection: React.FC<TestimonialsSectionProps> = ({ curren
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent pointer-events-none" />
               <div className="absolute bottom-3 left-3 px-3 py-1.5 rounded-xl bg-black/80 backdrop-blur-md border border-purple-400/40 text-xs font-bold text-purple-200 flex items-center gap-1.5">
                 <Sparkles className="w-3.5 h-3.5 text-purple-300" />
-                <span>Miami Skyline & Supercars Review</span>
+                <span>{t.testimonials.videoBadge}</span>
               </div>
             </div>
 
@@ -109,15 +109,15 @@ export const TestimonialsSection: React.FC<TestimonialsSectionProps> = ({ curren
                     <Star key={i} className="w-5 h-5 fill-amber-300" />
                   ))}
                 </div>
-                <span className="text-sm font-bold text-white">4.9 no Google Reviews</span>
+                <span className="text-sm font-bold text-white">{t.testimonials.googleCallout.scoreBadge}</span>
               </div>
 
               <h3 className="text-2xl sm:text-3xl font-extrabold text-white tracking-tight leading-tight">
-                Avaliado com Excelência Máxima no <span className="text-purple-300 neon-glow-purple">Google</span>
+                {t.testimonials.googleCallout.titlePart1} <span className="text-purple-300 neon-glow-purple">{t.testimonials.googleCallout.titleGoogle}</span>
               </h3>
 
               <p className="text-purple-200/80 text-sm sm:text-base leading-relaxed">
-                Nossos clientes compartilham suas experiências reais em Miami: zero burocracia, pontualidade britânica no aeroporto e superesportivos impecáveis. Já alugou conosco? Deixe também a sua avaliação!
+                {t.testimonials.googleCallout.desc}
               </p>
 
               <div className="pt-2 flex flex-wrap gap-4">
@@ -127,7 +127,7 @@ export const TestimonialsSection: React.FC<TestimonialsSectionProps> = ({ curren
                   className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl text-sm font-extrabold text-black bg-gradient-to-r from-amber-300 to-amber-400 hover:brightness-110 shadow-lg shadow-amber-400/20 transition-all cursor-pointer"
                 >
                   <MessageSquarePlus className="w-4 h-4 fill-black/20" />
-                  <span>Avaliar no Google</span>
+                  <span>{t.testimonials.googleCallout.evaluateBtn}</span>
                 </button>
 
                 <a
@@ -136,7 +136,7 @@ export const TestimonialsSection: React.FC<TestimonialsSectionProps> = ({ curren
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl text-sm font-semibold text-purple-200 bg-purple-950/60 hover:bg-purple-900/60 border border-purple-500/30 transition-all cursor-pointer"
                 >
-                  <span>Ver Todas as Avaliações</span>
+                  <span>{t.testimonials.googleCallout.viewAllBtn}</span>
                 </a>
               </div>
             </div>
@@ -196,10 +196,10 @@ export const TestimonialsSection: React.FC<TestimonialsSectionProps> = ({ curren
             </div>
             <div>
               <h4 className="text-lg font-bold text-white">
-                Siga a Miami Fine Rental no Instagram
+                {t.testimonials.instagramBanner.title}
               </h4>
               <p className="text-purple-200/80 text-xs sm:text-sm mt-0.5">
-                Veja os reels e vídeos diários de entrega de chaves com clientes e novidades da frota em <span className="text-pink-300 font-bold">@miami_fine_rental</span>
+                {t.testimonials.instagramBanner.desc} <span className="text-pink-300 font-bold">@miami_fine_rental</span>
               </p>
             </div>
           </div>
@@ -211,12 +211,12 @@ export const TestimonialsSection: React.FC<TestimonialsSectionProps> = ({ curren
             className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl text-sm font-bold text-white bg-gradient-to-r from-purple-600 via-pink-600 to-amber-500 hover:brightness-110 transition-all shrink-0 cursor-pointer shadow-md"
           >
             <Instagram className="w-4 h-4" />
-            <span>Ver @miami_fine_rental</span>
+            <span>{t.testimonials.instagramBanner.btn}</span>
           </a>
         </div>
       </div>
 
-      {/* Review Modal */}
+      {/* Review Modal - 100% Translated */}
       {reviewModalOpen && (
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/85 backdrop-blur-md">
           <div className="relative w-full max-w-md bg-[#130b24] border-2 border-purple-500/40 rounded-3xl p-6 shadow-2xl neon-border-purple text-purple-100">
@@ -232,24 +232,24 @@ export const TestimonialsSection: React.FC<TestimonialsSectionProps> = ({ curren
                 <div className="w-14 h-14 bg-emerald-500/20 text-emerald-400 rounded-full flex items-center justify-center mx-auto border border-emerald-400/40">
                   <CheckCircle2 className="w-8 h-8" />
                 </div>
-                <h4 className="text-xl font-bold text-white">Obrigado pela sua avaliação!</h4>
+                <h4 className="text-xl font-bold text-white">{t.testimonials.reviewModal.thankYouTitle}</h4>
                 <p className="text-xs text-purple-200/80">
-                  Seu feedback ajuda outros brasileiros a aproveitarem a melhor experiência em Miami.
+                  {t.testimonials.reviewModal.thankYouDesc}
                 </p>
               </div>
             ) : (
               <form onSubmit={handleSubmitReview} className="space-y-4">
                 <h3 className="text-xl font-bold text-white flex items-center gap-2">
                   <Star className="w-5 h-5 text-amber-300 fill-amber-300" />
-                  <span>Avaliar Miami Fine Rental</span>
+                  <span>{t.testimonials.reviewModal.title}</span>
                 </h3>
                 <p className="text-xs text-purple-200/80">
-                  Compartilhe como foi a sua experiência com o nosso atendimento e veículos.
+                  {t.testimonials.reviewModal.subtitle}
                 </p>
 
                 {/* Rating Stars */}
                 <div>
-                  <label className="block text-xs font-semibold text-purple-300 mb-1.5">Classificação:</label>
+                  <label className="block text-xs font-semibold text-purple-300 mb-1.5">{t.testimonials.reviewModal.ratingLabel}</label>
                   <div className="flex gap-2">
                     {[1, 2, 3, 4, 5].map((star) => (
                       <button
@@ -271,25 +271,25 @@ export const TestimonialsSection: React.FC<TestimonialsSectionProps> = ({ curren
                 </div>
 
                 <div>
-                  <label className="block text-xs font-semibold text-purple-300 mb-1.5">Seu Nome:</label>
+                  <label className="block text-xs font-semibold text-purple-300 mb-1.5">{t.testimonials.reviewModal.nameLabel}</label>
                   <input
                     type="text"
                     required
                     value={userName}
                     onChange={(e) => setUserName(e.target.value)}
-                    placeholder="Ex: Gabriel Martins (São Paulo)"
+                    placeholder={t.testimonials.reviewModal.namePlaceholder}
                     className="w-full bg-[#1b1033] border border-purple-500/30 rounded-xl p-3 text-xs text-white focus:outline-none focus:border-purple-400"
                   />
                 </div>
 
                 <div>
-                  <label className="block text-xs font-semibold text-purple-300 mb-1.5">Seu Comentário:</label>
+                  <label className="block text-xs font-semibold text-purple-300 mb-1.5">{t.testimonials.reviewModal.commentLabel}</label>
                   <textarea
                     required
                     rows={3}
                     value={userComment}
                     onChange={(e) => setUserComment(e.target.value)}
-                    placeholder="Conte como foi o atendimento, entrega no aeroporto ou estado do carro..."
+                    placeholder={t.testimonials.reviewModal.commentPlaceholder}
                     className="w-full bg-[#1b1033] border border-purple-500/30 rounded-xl p-3 text-xs text-white focus:outline-none focus:border-purple-400 resize-none"
                   />
                 </div>
@@ -299,7 +299,7 @@ export const TestimonialsSection: React.FC<TestimonialsSectionProps> = ({ curren
                   className="w-full py-3.5 px-4 rounded-xl font-bold text-black bg-gradient-to-r from-amber-300 to-amber-400 hover:brightness-110 transition-all flex items-center justify-center gap-2 cursor-pointer text-sm"
                 >
                   <Send className="w-4 h-4" />
-                  <span>Publicar Avaliação</span>
+                  <span>{t.testimonials.reviewModal.submitBtn}</span>
                 </button>
               </form>
             )}

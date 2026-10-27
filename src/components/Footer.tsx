@@ -165,7 +165,7 @@ export const Footer: React.FC<FooterProps> = ({ currentLang }) => {
             </ul>
             <div className="pt-2 text-[11px] text-purple-300/80 flex items-center gap-1.5">
               <ShieldCheck className="w-3.5 h-3.5 text-emerald-400 shrink-0" />
-              <span>Contratos Digitais & Seguro Comercial</span>
+              <span>{t.footer.trustBadge}</span>
             </div>
           </div>
         </div>
@@ -197,17 +197,15 @@ export const Footer: React.FC<FooterProps> = ({ currentLang }) => {
             <div className="text-xs space-y-3 max-h-80 overflow-y-auto pr-2 text-purple-200/80">
               {legalModal === 'terms' ? (
                 <>
-                  <p>1. Documentação: O locatário deve apresentar documento de habilitação válido (CNH do país de origem ou carteira internacional) e passaporte vigente no ato da retirada.</p>
-                  <p>2. Depósito Caução: É realizada uma pré-autorização reembolsável no cartão de crédito do titular da locação, liberada após vistoria de devolução.</p>
-                  <p>3. Seguro: Todos os veículos possuem seguro comercial com cobertura compreensiva contra danos e terceiros no estado da Flórida.</p>
-                  <p>4. Quilometragem: Franquia padrão inclusa especificada no voucher. Milhas adicionais ou ilimitadas mediante contratação prévia.</p>
-                  <p>5. Cancelamento: Cancelamento sem multa com até 48 horas de antecedência do horário agendado para entrega.</p>
+                  {t.footer.termsList.map((clause, idx) => (
+                    <p key={idx}>{clause}</p>
+                  ))}
                 </>
               ) : (
                 <>
-                  <p>1. Coleta de Dados: Coletamos apenas as informações necessárias para formalização da reserva e entrega do veículo (nome, telefone de contato, datas de viagem e comprovantes de habilitação).</p>
-                  <p>2. Segurança: Seus dados cadastrais e de pagamento são protegidos e tratados sob estrito sigilo comercial e em conformidade com as legislações vigentes.</p>
-                  <p>3. Comunicação: O contato direto via WhatsApp é utilizado exclusivamente para suporte, coordenação de voos e facilitação do atendimento ao cliente.</p>
+                  {t.footer.privacyList.map((clause, idx) => (
+                    <p key={idx}>{clause}</p>
+                  ))}
                 </>
               )}
             </div>
@@ -216,7 +214,7 @@ export const Footer: React.FC<FooterProps> = ({ currentLang }) => {
                 onClick={() => setLegalModal(null)}
                 className="px-5 py-2.5 rounded-xl bg-purple-600 hover:bg-purple-500 text-white font-bold text-xs shadow-md transition-colors"
               >
-                Entendido
+                {t.footer.closeModal}
               </button>
             </div>
           </div>

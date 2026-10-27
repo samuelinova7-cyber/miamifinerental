@@ -33,29 +33,33 @@ export const Hero: React.FC<HeroProps> = ({ currentLang, onExploreFleet }) => {
           poster="/images/hero_miami_luxury_cars_1793138559816.jpg"
           className="w-full h-full object-cover object-center"
         />
-        {/* Only a subtle soft bottom vignette to smoothly merge with the page background */}
+        {/* Subtle soft bottom vignette to smoothly merge with the page background */}
         <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-[#0b0714] to-transparent pointer-events-none" />
       </div>
 
-      {/* Minimalist Floating Content */}
+      {/* Minimalist Floating Content - 100% Translated */}
       <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Subtle Minimalist Kicker */}
-        <div className="inline-flex items-center gap-2 px-4 py-1 rounded-full bg-black/40 backdrop-blur-md border border-purple-400/40 mb-4 shadow-[0_0_15px_rgba(192,132,252,0.4)]">
+        <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-black/45 backdrop-blur-md border border-purple-400/40 mb-4 shadow-[0_0_15px_rgba(192,132,252,0.4)]">
           <span className="w-2 h-2 rounded-full bg-purple-400 animate-pulse" />
           <span className="text-[11px] sm:text-xs font-bold uppercase tracking-widest text-purple-200">
-            MIAMI FINE RENTAL · LUXURY & EXOTIC CARS
+            {t.hero.kicker}
           </span>
         </div>
 
-        {/* Headline with High-Legibility Shadow for Crisp Contrast on Live Video */}
+        {/* Dynamic Translated Headline with High-Legibility Shadow */}
         <h1
           className="text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight text-white mb-4 leading-[1.08] drop-shadow-[0_4px_16px_rgba(0,0,0,0.95)]"
           style={{ textWrap: 'balance' }}
         >
-          Sua Viagem em <span className="text-purple-300 neon-glow-purple drop-shadow-[0_0_20px_rgba(192,132,252,0.8)]">Miami</span> Começa Aqui
+          {t.hero.titlePart1}{' '}
+          <span className="text-purple-300 neon-glow-purple drop-shadow-[0_0_20px_rgba(192,132,252,0.8)]">
+            {t.hero.titleCity}
+          </span>{' '}
+          {t.hero.titlePart2}
         </h1>
 
-        {/* Minimalist 1-Line Subtitle */}
+        {/* Minimalist Subtitle */}
         <p className="text-base sm:text-lg lg:text-xl text-purple-100/95 max-w-2xl mx-auto mb-8 font-medium drop-shadow-[0_2px_8px_rgba(0,0,0,0.95)]">
           {t.hero.subtitle}
         </p>
@@ -74,7 +78,7 @@ export const Hero: React.FC<HeroProps> = ({ currentLang, onExploreFleet }) => {
 
           <button
             onClick={onExploreFleet}
-            className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-7 py-4 text-sm sm:text-base font-semibold text-white bg-black/40 hover:bg-black/60 border border-purple-400/40 rounded-2xl backdrop-blur-md transition-all cursor-pointer hover:border-purple-300 shadow-xl"
+            className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-7 py-4 text-sm sm:text-base font-semibold text-white bg-black/45 hover:bg-black/65 border border-purple-400/40 rounded-2xl backdrop-blur-md transition-all cursor-pointer hover:border-purple-300 shadow-xl"
           >
             <span>{t.hero.ctaSecondary}</span>
             <ChevronRight className="w-4 h-4" />
