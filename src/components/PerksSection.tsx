@@ -33,7 +33,7 @@ export const PerksSection: React.FC<PerksSectionProps> = ({ currentLang }) => {
           <div className="lg:col-span-7 rounded-3xl bg-[#130b24] border border-purple-500/30 overflow-hidden relative group flex flex-col justify-between neon-border-purple">
             <div className="relative h-64 sm:h-72 w-full overflow-hidden">
               <img
-                src="/src/assets/images/vip_airport_delivery_1793138561939.jpg"
+                src="/images/vip_airport_delivery_1793138561939.jpg"
                 alt="VIP Airport Delivery at Miami International Airport - Concierge key handoff"
                 referrerPolicy="no-referrer"
                 className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700"

@@ -30,7 +30,7 @@ export const Hero: React.FC<HeroProps> = ({ currentLang, onExploreFleet }) => {
           loop
           muted
           playsInline
-          poster="/src/assets/images/hero_miami_luxury_cars_1793138559816.jpg"
+          poster="/images/hero_miami_luxury_cars_1793138559816.jpg"
           className="w-full h-full object-cover object-center"
         />
         {/* Only a subtle soft bottom vignette to smoothly merge with the page background */}

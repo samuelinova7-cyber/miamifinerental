@@ -19,7 +19,7 @@ export const FLEET_DATA: Vehicle[] = [
       en: 'Most Desired',
       es: 'Más Deseado'
     },
-    image: '/src/assets/images/car_lamborghini_huracan_1793138559887.jpg',
+    image: '/images/car_lamborghini_huracan_1793138559887.jpg',
     specs: {
       horsepower: 640,
       acceleration: '2.9s',
@@ -77,7 +77,7 @@ export const FLEET_DATA: Vehicle[] = [
       en: 'Miami Favorite',
       es: 'Favorito en Miami'
     },
-    image: '/src/assets/images/car_corvette_c8_1793138561336.jpg',
+    image: '/images/car_corvette_c8_1793138561336.jpg',
     specs: {
       horsepower: 495,
       acceleration: '2.9s',
@@ -135,7 +135,7 @@ export const FLEET_DATA: Vehicle[] = [
       en: 'Elegance Icon',
       es: 'Icono de Elegancia'
     },
-    image: '/src/assets/images/car_porsche_911_cabrio_1793138562013.jpg',
+    image: '/images/car_porsche_911_cabrio_1793138562013.jpg',
     specs: {
       horsepower: 379,
       acceleration: '3.8s',
@@ -193,7 +193,7 @@ export const FLEET_DATA: Vehicle[] = [
       en: 'Maximum VIP Space',
       es: 'Espacio VIP Máximo'
     },
-    image: '/src/assets/images/car_cadillac_escalade_1793138562483.jpg',
+    image: '/images/car_cadillac_escalade_1793138562483.jpg',
     specs: {
       horsepower: 420,
       acceleration: '5.9s',
@@ -251,7 +251,7 @@ export const FLEET_DATA: Vehicle[] = [
       en: 'Performance & Luxury',
       es: 'Rendimiento y Lujo'
     },
-    image: '/src/assets/images/car_lamborghini_huracan_1793138559887.jpg', // high-res Lamborghini flagship asset
+    image: '/images/car_lamborghini_huracan_1793138559887.jpg', // high-res Lamborghini flagship asset
     specs: {
       horsepower: 666,
       acceleration: '3.5s',
@@ -309,7 +309,7 @@ export const FLEET_DATA: Vehicle[] = [
       en: 'Best Value',
       es: 'Mejor Relación Calidad-Precio'
     },
-    image: '/src/assets/images/car_corvette_c8_1793138561336.jpg', // convertible asset
+    image: '/images/car_corvette_c8_1793138561336.jpg', // convertible asset
     specs: {
       horsepower: 480,
       acceleration: '4.2s',
@@ -367,7 +367,7 @@ export const FLEET_DATA: Vehicle[] = [
       en: 'World-Class Pinnacle',
       es: 'Cúspide de Lujo'
     },
-    image: '/src/assets/images/car_cadillac_escalade_1793138562483.jpg',
+    image: '/images/car_cadillac_escalade_1793138562483.jpg',
     specs: {
       horsepower: 592,
       acceleration: '4.9s',
