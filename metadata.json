@@ -1,0 +1,8 @@
+{
+  "name": "Miami Fine Rental Car | Aluguel de Carros de Luxo em Miami",
+  "description": "Locação de carros novos e superesportivos de luxo em Miami sem burocracia. Entrega e retirada VIP nos aeroportos MIA e FLL com atendimento personalizado em Português.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
